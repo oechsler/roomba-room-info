@@ -12,8 +12,7 @@ This script was specifically created for Home Assistant users to simplify the pr
 * Retrieves credentials (blid + password) required for local MQTT connection
 * Connects locally to your Roomba and listens for the `start` command
 * Extracts `pmap_id`, `user_pmapv_id`, and `regions[]` from the command
-* Outputs YAML suitable for use in Home Assistant or for cleanRoom() calls
-* Exits automatically after capturing one valid command
+* Outputs YAML suitable for use in Home Assistant
 
 ## Example Output
 
@@ -31,7 +30,7 @@ user_pmapv_id: 250518T100807
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-user/roomba-room-info.git
+git clone https://github.com/oechsler/roomba-room-info.git
 cd roomba-room-info
 ```
 
