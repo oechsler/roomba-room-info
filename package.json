@@ -1,0 +1,14 @@
+{
+    "name": "roomba-room-info",
+    "version": "1.0.0",
+    "description": "Fetch room information from a Roomba vacuum cleaner",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "dorita980": "^3.0.11",
+        "node-fetch": "^2.6.7"
+    }
+}
