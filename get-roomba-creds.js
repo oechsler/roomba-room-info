@@ -1,8 +1,14 @@
 import fetch from 'node-fetch';
 
-export async function getRoombaCredentials(email, password, apiKey = 'no-key') {
+const GIGYA_API_KEY = process.env.GIGYA_API_KEY;
+const IROBOT_APP_ID = process.env.IROBOT_APP_ID;
+
+if (!GIGYA_API_KEY) throw new Error('GIGYA_API_KEY is not set in environment variables.');
+if (!IROBOT_APP_ID) throw new Error('IROBOT_APP_ID is not set in environment variables.');
+
+export async function getRoombaCredentials(email, password) {
   const query = new URLSearchParams({
-    apiKey,
+    apiKey: GIGYA_API_KEY,
     targetenv: 'mobile',
     loginID: email,
     password,
@@ -23,7 +29,7 @@ export async function getRoombaCredentials(email, password, apiKey = 'no-key') {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Connection': 'close' },
     body: JSON.stringify({
-      app_id: 'no-app-id',
+      app_id: IROBOT_APP_ID,
       assume_robot_ownership: 0,
       gigya: {
         signature: gigyaData.UIDSignature,

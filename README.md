@@ -27,27 +27,12 @@ user_pmapv_id: 250518T100807
 
 ## Quickstart (via Docker)
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/oechsler/roomba-room-info.git
-cd roomba-room-info
-```
-
-### 2. Build the Docker image
-
-```bash
-docker build -t roomba-room-info .
-```
-
-### 3. Run the script
-
 ```bash
 docker run --rm -it \
   -e ROOMBA_EMAIL='your@email.com' \
   -e ROOMBA_PASSWORD='yourCloudPassword' \
   -e ROOMBA_IP='192.168.1.x' \
-  roomba-room-info
+  ghcr.io/oechsler/roomba-room-info:latest
 ```
 
 The script will connect to the local MQTT interface and wait for a cleaning command (`start`) to appear. Once detected, it prints the relevant values and exits.
